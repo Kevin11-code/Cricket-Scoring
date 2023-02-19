@@ -11,9 +11,10 @@ function GetMatches() {
   const [search, setSearch] = useState("");
   const matchType = matches.filter((match) => {
     return (
-      match.matchType.toLowerCase().includes(search.toLowerCase()) ||
-      match.teams[0].toLowerCase().includes(search.toLowerCase()) ||
-      match.teams[1].toLowerCase().includes(search.toLowerCase())
+      // match.matchType.toLowerCase().includes(search.toLowerCase()) ||
+      // match.teams[0].toLowerCase().includes(search.toLowerCase()) ||
+      // match.teams[1].toLowerCase().includes(search.toLowerCase())
+      false
       // match["team-1"].toLowerCase().includes(search.toLowerCase()) ||
       // match["team-2"].toLowerCase().includes(search.toLowerCase())
     );
@@ -47,7 +48,7 @@ function GetMatches() {
               color: "white"
           }}/> */}
           <input
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => setSearch("e.target.value")}
             placeholder="Search"
           />
         </div>

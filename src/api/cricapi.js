@@ -1,4 +1,4 @@
-const API_KEY = "46571a86-0610-4983-94d4-6e5ca22e464b";
+const API_KEY = "a818e9fa-6dc5-47a8-839a-5a345f301649";
 const NEWS_API_KEY = "a5d61c9902d3447c84fc3867c7041b2a";
 
 export const getMatchesInfo = () => {
@@ -30,7 +30,7 @@ export const getPlayerStat = (name) => {
 
 export const getPlayerDesc = (id) => {
   // const url = `https://cricapi.com/api/playerStats?apikey=${API_KEY}&pid=${id}`;
-  const url = `https://api.cricapi.com/v1/players_info?apikey=${API_KEY}&id=${id}`;
+  const url = `https://api.cricapi.com/v1/players_info?apikey=a818e9fa-6dc5-47a8-839a-5a345f301649`;
 
   return fetch(url)
     .then((res) => res.json())

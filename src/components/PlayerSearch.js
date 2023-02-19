@@ -13,18 +13,15 @@ import {
   Avatar,
   Button,
 } from "@mui/material";
-// import { makeStyles } from "@material-ui/styles";
 import { Accordion } from "@mui/material";
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     width: "80%",
-//   },
-//   heading: {
-//     fontSize: "1.1rem",
-//     fontWeight: "500",
-//   },
-// }));
+const root = {
+  width: "80%",
+};
+const heading = {
+  fontSize: "1.1rem",
+  fontWeight: "500",
+};
 
 function SimpleAccordion({ player, key }) {
   // console.log(player);
@@ -39,34 +36,34 @@ function SimpleAccordion({ player, key }) {
   };
 
   return (
-    <div className={`classes.root`}>
+    <div style={root}>
       <Accordion>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
           <div className="player__Name">
             <h4>{player.name}</h4>
-            <Button onClick={() => stat(player.pid)}>See Profile</Button>
+            <Button onClick={() => stat(player.id)}>See Profile</Button>
           </div>
         </AccordionSummary>
         <AccordionDetails>
           <div className="prof__details">
             <div className="prof__detailsInfo">
               <div className="prof__detailsImg">
-                <Avatar src={playerDesc.imageURL} alt="img" />
+                <Avatar src={playerDesc.playerImg} alt="img" />
               </div>
-              <p>{playerDesc.fullName}</p>
+              <p>{playerDesc.name}</p>
               <p>{playerDesc.country}</p>
             </div>
             <h4>PERSONAL INFORMATION</h4>
             <div className="prof__detailsPersonal">
               <div className="prof__detailsPerson">
                 <div className="prof__details">
-                  {playerDesc.born && <p>Born</p>}
+                  {playerDesc.dateOfBirth && <p>Born</p>}
                 </div>
                 <div className="prof__details">
-                  {playerDesc.currentAge && <p>Age</p>}
+                  {playerDesc.placeOfBirth && <p>Age</p>}
                 </div>
                 <div className="prof__details">
-                  {playerDesc.playingRole && <p>Role</p>}
+                  {playerDesc.role && <p>Role</p>}
                 </div>
                 <div className="prof__details">
                   {playerDesc.battingStyle && <p>Batting Style</p>}
@@ -78,13 +75,13 @@ function SimpleAccordion({ player, key }) {
               <div className="prof__detailsPersonInfo">
                 <div className="prof__detailsPerInfo">
                   <div className="prof__detailInfo">
-                    <p>{playerDesc.born}</p>
+                    <p>{playerDesc.dateOfBirth}</p>
                   </div>
                   <div className="prof__detailInfo">
-                    <p>{playerDesc.currentAge}</p>
+                    <p>{playerDesc.placeOfBirth}</p>
                   </div>
                   <div className="prof__detailInfo">
-                    <p>{playerDesc.playingRole}</p>
+                    <p>{playerDesc.role}</p>
                   </div>
                   <div className="prof__detailInfo">
                     <p>{playerDesc.battingStyle}</p>
@@ -101,7 +98,7 @@ function SimpleAccordion({ player, key }) {
               </div>
             )}
             <div className="prof__teamsName">
-              <p>{playerDesc.majorTeams}</p>
+              {/* <p>{playerDesc.majorTeams}</p> */}
             </div>
             {playerDesc.profile && (
               <div className="prof__teams">
@@ -110,7 +107,7 @@ function SimpleAccordion({ player, key }) {
             )}
 
             <div className="prof__teamsName">
-              <p>{playerDesc.profile}</p>
+              {/* <p>{playerDesc.profile}</p> */}
             </div>
             {playerDesc.data?.batting && (
               <div className="prof__teams">
@@ -131,12 +128,12 @@ function SimpleAccordion({ player, key }) {
                 <p>Tests</p>
               </div>
             </div>
-            <div className="prof__statsBatting">
+            {/* <div className="prof__statsBatting">
               <div className="prof__statBattingFormatInfo">
                 <p style={{ fontWeight: "bold" }}>Matches</p>
               </div>
               <div className="prof__statBattingFormatInfo">
-                <p>{playerDesc.data?.batting?.ODIs?.["Mat"]}</p>
+                <p>{playerDesc.stats.data?.batting?.ODIs?.["Mat"]}</p>
               </div>
               <div className="prof__statBattingFormatInfo">
                 <p>{playerDesc.data?.batting?.T20Is?.["Mat"]}</p>
@@ -499,7 +496,7 @@ function SimpleAccordion({ player, key }) {
               <div className="prof__statBattingFormatInfo">
                 <p>{playerDesc.data?.bowling?.tests?.["10"]}</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </AccordionDetails>
       </Accordion>
